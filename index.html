@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>APP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+        <header class="menu">
+            <button class="menu-toggle">
+                <span class="hamburger"></span>
+            </button>
+
+            <h1 class="page-title">Perfil</h1>
+
+            <figure class="menu-profile">
+                
+            </figure>
+        </header>
+
+        <main class="app-view">
+            <!-- Tela de perfil -->
+            <section class="section app-profile">
+                <div class="v-card">
+                    <figure class="v-card-profile">
+                        
+                    </figure>
+                    <h2 class="v-card-name"></h2>
+                    <h3 class="v-card-company"></h3>
+                </div>
+
+                <article class="v-info box-profile">
+                    <p class="v-info-title">Localização</p>
+                    <div class="box">
+                        <h3 class="v-info-content js-pais"></h3>
+                    </div>
+                </article>
+
+                <article class="v-info box-profile">
+                    <p class="v-info-title">E-mail</p>
+                    <div class="box">
+                        <h3 class="v-info-content js-email"></h3>
+                    </div>
+                </article>  
+
+                <article class="v-info box-profile">
+                    <p class="v-info-title">Seguidores</p>
+                    <div class="box">
+                        <h3 class="v-info-content js-seguidores"></h3>
+                    </div>
+                </article>  
+
+                <article class="v-info box-profile">
+                    <p class="v-info-title">Seguindo</p>
+                    <div class="box">
+                        <h3 class="v-info-content js-seguindo"></h3>
+                    </div>
+                </article>                
+            </section>
+
+            <!-- Tela de Notícias -->
+            <section class="section app-news">
+                <article class="v-news box-noticia">
+                    <p class="v-news-tittle"></p>
+                </article>
+
+                <article class="v-news box-noticia">
+                    <p class="v-news-tittle"></p>
+                    <div class="box">
+                        <h3 class="v-news-content js-news"></h3>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+
+        <script>
+            $(document).ready(function () { 
+                var nome = prompt("Por favor informe seu nome de usuario GIT");
+
+                $.getJSON('https://api.github.com/users/'+nome, function(data) {
+                        console.log(data);
+
+                        var nome = data.name;
+                        var empresa = data.company;
+                        var pais = data.location;  
+                        var email = data.email;
+                        var seguidores = data.followers;
+                        var seguindo = data.following;
+                        var foto = data.avatar_url;
+
+                        $(".v-card-name").append(nome);
+                        $(".v-card-company").append(empresa);
+                        $(".js-pais").append(pais);
+                        $(".js-email").append(email);
+                        $(".js-seguidores").append(seguidores);
+                        $(".js-seguindo").append(seguindo);
+                        $(".v-card-profile").append('<img src="'+foto+'" alt="foto-usuario">');
+                        $(".menu-profile").append('<img src="'+foto+'" alt="foto-usuario">');
+                });
+            });
+        </script>
+    </body>
+</html>

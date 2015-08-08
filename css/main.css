@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding-top: 54px;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #2c3e50; /*azul escuro*/
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: 'lato', sans-serif;
+}
+
+.menu {
+    padding: 7px 15px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: #fff; /*escuro*/
+    width: 100%;
+    height: auto;
+    display: table;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.menu-item{
+    
+}
+
+.menu-toggle ,
+.menu-profile {
+    width: auto;
+}
+
+.menu-toggle {
+    float: left;
+    border: none;
+    background: none;
+    height: auto;
+    padding: 10px 0;
+    outline: none;
+    margin-top: 8px;
+}
+
+.hamburger,
+.hamburger:after,
+.hamburger:before {
+    width: 30px;
+    height: 4px;
+    display: block;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    background-color: #2c3e50; /*azul escuro*/
+    border-radius: 4px;
+}
+
+.hamburger:after {
+    content: " ";
+    bottom: -8px;
+}
+
+.hamburger:before {
+    content: "";
+    top: -8px;
+}
+
+.page-title {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #e25c81; /*Magento*/
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 2.6em; /*altura entre linhas*/
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.menu-profile {
+    float: right;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    float: right;
+    overflow: hidden;
+    border-radius: 999em;
+}
+
+.section{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    display: table;
+}
+
+.v-card{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.v-card-profile{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 999em;
+    overflow: hidden;
+}
+
+.v-card-name,
+.v-card-company{
+    margin: 5px auto;
+    line-height: 1.2em;
+}
+
+.v-card-name{
+    font-weight: bolder;
+    margin-top: 15px;
+}
+
+.v-card-company{
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #e25c81; /*Magento*/
+}
+
+.v-info,
+.v-news{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.v-info-tittle,
+.v-news-tittle{
+    margin: 5px auto;
+    font-size: 0.8em;
+    color: #a0a1a2; /*cinza escuro*/
+}
+
+.box{
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 5px 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+
+.v-info-content,
+.{
+    font-size: 1em;
+    line-height: 1em;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
